@@ -10,7 +10,7 @@ class Clicker extends Component {
 
     componentDidMount() {
         this.intervalID = setInterval(
-            () => this.getCount(), 1000
+            () => this.getCount(), 3000
         );
     }
 
@@ -36,13 +36,13 @@ class Clicker extends Component {
     }
 
     getCount = () => {
-        fetch("http://localhost:8080/counter", {})
+        fetch("http://172.19.65.148:8080/counter", {})
             .then(response => response.json())
             .then(data => this.setState((state) => ({ count: data.count })));
     }
 
     addToCount = (n: number) => {
-        fetch("http://localhost:8080/counter/update", {
+        fetch("http://172.19.65.148:8080/counter/update", {
             method: 'POST',
             headers: { conetent: "application/json" },
             body: JSON.stringify({ upd: n })
@@ -50,7 +50,7 @@ class Clicker extends Component {
     }
 
     setCount = (n: number) => {
-        fetch("http://localhost:8080/counter/reset", {
+        fetch("http://172.19.65.148:8080/counter/reset", {
             method: 'PUT',
             headers: { conetent: "application/json" },
             body: JSON.stringify({ val: n })
