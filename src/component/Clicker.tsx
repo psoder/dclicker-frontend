@@ -2,6 +2,8 @@ import { ArrowDownward, ArrowUpward, Refresh } from '@material-ui/icons';
 import { Component } from 'react'
 import '../style/Clicker.css';
 
+const ip = "10.179.121.88:8080";
+
 class Clicker extends Component {
     state = {
         count: 0
@@ -36,13 +38,13 @@ class Clicker extends Component {
     }
 
     getCount = () => {
-        fetch("http://172.19.65.148:8080/counter", {})
+        fetch("http://" + ip + "/counter", {})
             .then(response => response.json())
             .then(data => this.setState((state) => ({ count: data.count })));
     }
 
     addToCount = (n: number) => {
-        fetch("http://172.19.65.148:8080/counter/update", {
+        fetch("http://" + ip + "/counter/update", {
             method: 'POST',
             headers: { conetent: "application/json" },
             body: JSON.stringify({ upd: n })
@@ -50,7 +52,7 @@ class Clicker extends Component {
     }
 
     setCount = (n: number) => {
-        fetch("http://172.19.65.148:8080/counter/reset", {
+        fetch("http://" + ip + "/counter/reset", {
             method: 'PUT',
             headers: { conetent: "application/json" },
             body: JSON.stringify({ val: n })
