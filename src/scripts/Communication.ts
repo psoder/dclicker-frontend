@@ -28,25 +28,4 @@ function PUTCount(n: number) {
     });
 }
 
-//   increase = () => {
-//     this.addToCount(1);
-//     this.getCount();
-// }
-
-// decrease = () => {
-//     this.addToCount(-1);
-//     this.getCount();
-// }
-
-// updateCount = () => {
-//     let s = (document.getElementById("textArea") as HTMLInputElement).value;
-//     let n = +s;
-//     this.setCount(n);
-// }
-
-// resetCounter = () => {
-//     this.setCount(0);
-//     this.getCount();
-// }
-
 export { GETCount, POSTCount, PUTCount, setIP }

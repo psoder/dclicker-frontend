@@ -11,11 +11,10 @@ class Clicker extends Component {
         count: 0,
         settingsShown: false,
     }
-    // intervalID: NodeJS.Timeout | undefined;
 
     componentDidMount() {
         setInterval(
-            () => this.setState({ count: GETCount() }), 5000
+            () => this.setState({ count: GETCount() }), 1000
         );
     }
 
