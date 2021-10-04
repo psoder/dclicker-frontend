@@ -6,14 +6,14 @@ function setIP(newIP: string) {
 }
 
 function GETCount(): number {
-    fetch("http://" + ip + "/counter", {})
+    fetch("https://" + ip + "/counter", {})
         .then(response => response.json())
         .then(data => n = data.count);
     return n;
 }
 
 function POSTCount(n: number) {
-    fetch("http://" + ip + "/counter/update", {
+    fetch("https://" + ip + "/counter/update", {
         method: 'POST',
         headers: { conetent: "application/json" },
         body: JSON.stringify({ upd: n })
@@ -21,7 +21,7 @@ function POSTCount(n: number) {
 }
 
 function PUTCount(n: number) {
-    fetch("http://" + ip + "/counter/reset", {
+    fetch("https://" + ip + "/counter/reset", {
         method: 'PUT',
         headers: { conetent: "application/json" },
         body: JSON.stringify({ val: n })
