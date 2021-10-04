@@ -1,4 +1,4 @@
-let ip = "85.230.176.103:8080";
+let ip = "85.230.176.103:9001";
 let n = 0;
 
 function setIP(newIP: string) {
